@@ -1,63 +1,6 @@
+@import "./utility/variables.scss";
+@import "./layout/reset";
 @import "./layout/header";
 @import "./layout/main";
 @import "./layout/footer";
 
-
-
-/** tienda**/
-.gridsTienda {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    background-color: rgb(146, 179, 57);}
-.tarjeta {
-   @include tarjeta(flex, column, 30%,  ) 
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    border: 1px solid lightgray;
-    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
-    border-radius: 15px;
-    font-family: sans-serif;
-    align-items: center;
-  
-    img{
-        width:200px;
-    }
-  }
-  
-  .titulo {
-    font-size: 24px;
-    padding: 10px 10px 0 10px;
-    
-  }
-  
-  .cuerpo {
-    padding: 10px;
-  .cuerpo img{
-    width: 6.25rem;
-    height: fit-content;
-  }  
-  
-  }
-  
-  .pie {
-    background: #ddba20;
-    border-radius: 0 0 15px 15px;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .pie a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .pie a:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-  }

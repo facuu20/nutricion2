@@ -1,37 +1,50 @@
-header {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.header {
   padding: 3.75rem;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly; }
-  header img {
+  .header img {
     width: 9.375rem;
     height: 9.375rem;
     background-color: red; }
-  header nav {
-    width: 80%;
+  .header nav {
+    width: 100%;
     padding: 1.850rem; }
-    header nav ul {
+    .header nav ul {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       width: 100%;
       list-style: none; }
-      header nav ul a {
-        color: black;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: 37.5rem; }
+  .header a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 37.5rem; }
+
+@media (max-width: 578px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; } }
 
 main {
-  background-color: bisque; }
+  /* ESTILO DEL CONTENEDOR PRINCIPAL*/
+  /* ESTILO DE LOS SERVICIOS*/ }
   main .principalContainer {
     background-image: url("../assets/images/fruta.webp");
     background-position: center;
     background-size: cover;
-    width: 100vw;
-    height: 500px;
+    background-repeat: no-repeat;
+    width: 100%;
     display: flex;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.35);
     flex-direction: column;
@@ -47,9 +60,12 @@ main {
       align-items: center; }
       main .principalContainer .container p {
         color: black;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 400;
         padding: 80px; }
+      @media (max-width: 768px) {
+        main .principalContainer .container p {
+          font-size: 1rem; } }
       main .principalContainer .container button {
         background-color: #C3EF47;
         border-radius: 50px;
@@ -63,77 +79,215 @@ main {
           font-size: 25px;
           text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
           text-decoration: none; }
-  main section {
+  main .serviceSection {
     background-color: #bb8f79;
-    height: 25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around; }
-    main section h2 {
-      text-align: center; }
-    main section .cardsGrid {
+    main .serviceSection h2 {
+      text-align: center;
+      font-size: 1.2rem; }
+    main .serviceSection .cardsGrid {
       display: grid;
       width: 100%;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-evenly;
+      align-items: center;
       justify-items: center; }
-      main section .cardsGrid .tarjeta {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        border: 1px solid lightgray;
+      main .serviceSection .cardsGrid .tarjeta {
+        width: 9.375rem;
+        border: 1px solid black;
         box-shadow: 2px 2px 8px 4px #d3d3d3d1;
         border-radius: 15px;
         font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        background-color: white; }
-        main section .cardsGrid .tarjeta .titulo {
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.781);
+        height: 16.375rem; }
+        main .serviceSection .cardsGrid .tarjeta .titulo {
           font-size: 24px;
           padding: 10px 10px 0 10px; }
-        main section .cardsGrid .tarjeta .cuerpo {
-          padding: 10px; }
-        main section .cardsGrid .tarjeta .cuerpo img {
+        main .serviceSection .cardsGrid .tarjeta .cuerpo {
+          padding: 10px;
+          background-color: #b99b13;
           width: 9.375rem; }
-        main section .cardsGrid .tarjeta .pie {
+        main .serviceSection .cardsGrid .tarjeta .cuerpo img {
+          width: 100%; }
+        main .serviceSection .cardsGrid .tarjeta .pie {
           background: #ddba20;
           border-radius: 0 0 15px 15px;
           padding: 10px;
           text-align: center; }
-  main .contactSection {
-    background-color: greenyellow;
-    width: 100%;
-    text-align: left;
-    height: 35%; }
-    main .contactSection form {
+    @media (max-width: 378px) {
+      main .serviceSection .cardsGrid {
+        grid-template-columns: 1fr; }
+        main .serviceSection .cardsGrid .tarjeta {
+          width: 80%;
+          margin-top: 10px; }
+          main .serviceSection .cardsGrid .tarjeta .titulo {
+            font-size: 1rem; } }
+
+.contactSection {
+  background-color: greenyellow;
+  width: 100%;
+  text-align: left;
+  height: 35%; }
+  .contactSection form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .contactSection form .form input {
+      width: 60%;
+      height: 25px;
+      border-radius: 2px 12px;
+      border: 0;
+      padding-left: 9px;
+      box-shadow: 3px 3px rgba(136, 136, 136, 0.363);
+      margin: 10px; }
+    .contactSection form .form textarea {
+      width: 60%;
+      border-radius: 2px 12px;
+      border: 0;
+      padding-left: 9px;
+      box-shadow: 3px 3px rgba(136, 136, 136, 0.363);
+      margin: 10px; }
+    .contactSection form .btnSubmit {
+      background-color: #ddba20;
+      color: white;
+      font-size: 16px;
+      transform: scale(1);
+      transition: 0.5s; }
+    .contactSection form .btnSubmit:hover {
+      background-color: #b99b13;
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: 0.5s; }
+
+.webSection {
+  background-color: #b99b13;
+  background-image: url(../assets/images/planNutricional.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .webSection .pWeb {
+    display: flex;
+    text-align: end;
+    font-size: 1.25rem;
+    border-radius: 5rem;
+    justify-content: center; }
+  .webSection div {
+    justify-content: center;
+    display: flex;
+    justify-content: space-evenly; }
+    .webSection div .boton {
+      background-color: #C3EF47;
+      border-radius: 50px 50px 50px 50px;
+      height: 5.25rem;
+      width: 8.75rem;
+      border: 0;
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.85); }
+
+@media (max-width: 320px) {
+  .pWeb {
+    font-size: 4.75rem;
+    text-align: center;
+    padding: 1.875rem; }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; } }
+
+.mainPlan {
+  background-image: url(../assets/images/planNutricional.jpg);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .mainPlan .container {
+    display: flex;
+    justify-content: center;
+    background-color: #e4d611;
+    border-radius: 193px 75px 193px 134px;
+    flex-direction: column; }
+    .mainPlan .container p {
+      padding: 3.25rem; }
+  .mainPlan div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    .mainPlan div button {
+      background-color: #C3EF47;
+      border-radius: 50px;
+      height: 6.25rem;
+      width: 80%;
+      border: 0;
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.85); }
+
+.seguimientoMain {
+  justify-content: space-between;
+  background-image: url(../assets/images/necesitasnutricionista-t.jpg.webp); }
+  .seguimientoMain section {
+    display: flex;
+    justify-content: space-evenly; }
+    .seguimientoMain section div {
       display: flex;
       flex-direction: column;
-      align-items: center; }
-      main .contactSection form .form input {
-        width: 60%;
-        height: 25px;
-        border-radius: 2px 12px;
-        border: 0;
-        padding-left: 9px;
-        box-shadow: 3px 3px rgba(136, 136, 136, 0.363);
-        margin: 10px; }
-      main .contactSection form .form textarea {
-        width: 60%;
-        border-radius: 2px 12px;
-        border: 0;
-        padding-left: 9px;
-        box-shadow: 3px 3px rgba(136, 136, 136, 0.363);
-        margin: 10px; }
-      main .contactSection form .btnSubmit {
-        background-color: #ddba20;
-        color: white;
-        font-size: 16px;
-        transform: scale(1);
-        transition: 0.5s; }
-      main .contactSection form .btnSubmit:hover {
-        background-color: #b99b13;
-        cursor: pointer;
-        transform: scale(1.1);
-        transition: 0.5s; }
+      background-color: #d89f23;
+      border-radius: 30px 30px 30px 30px;
+      width: 50%; }
+      .seguimientoMain section div h3 {
+        text-align: center; }
+      .seguimientoMain section div p {
+        text-align: center; }
+      .seguimientoMain section div button {
+        background-color: rgba(43, 255, 0, 0.267);
+        border-radius: 100px 100px 100px 100px; }
+
+@media (max-width: 420px) {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; } }
+
+.mainTienda section {
+  border-radius: 150px 75px 150px 75px;
+  background-color: greenyellow; }
+  .mainTienda section p {
+    text-align: center;
+    justify-content: center;
+    align-items: center; }
+
+.mainTienda .gridsTienda {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #C3EF47;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center; }
+  .mainTienda .gridsTienda .tarjetaTienda .cuerpo {
+    background-color: #caa500d0;
+    width: 10rem;
+    align-items: center;
+    justify-content: center; }
+    .mainTienda .gridsTienda .tarjetaTienda .cuerpo img {
+      width: 10rem;
+      height: 10rem; }
+  .mainTienda .gridsTienda .tarjetaTienda .pie {
+    text-align: center;
+    background-color: white;
+    border-radius: 100px 100px 100px 100px; }
+    .mainTienda .gridsTienda .tarjetaTienda .pie a {
+      text-decoration: none; }
+
+@media (max-width: 320px) {
+  .mainTienda .gridsTienda {
+    display: grid;
+    grid-template-columns: 1fr; } }
 
 @font-face {
   font-family: 'fuentecoder';
@@ -141,51 +295,5 @@ main {
 
 .footer {
   font-family: 'fuentecoder';
-  text-align: center; }
-
-/** tienda**/
-.gridsTienda {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  background-color: #92b339; }
-
-.tarjeta {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  border: 1px solid lightgray;
-  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
-  border-radius: 15px;
-  font-family: sans-serif;
-  align-items: center; }
-  .tarjeta img {
-    width: 200px; }
-
-.titulo {
-  font-size: 24px;
-  padding: 10px 10px 0 10px; }
-
-.cuerpo {
-  padding: 10px; }
-  .cuerpo .cuerpo img {
-    width: 6.25rem;
-    height: fit-content; }
-
-.pie {
-  background: #ddba20;
-  border-radius: 0 0 15px 15px;
-  padding: 10px;
-  text-align: center; }
-
-.pie a {
-  text-decoration: none;
-  color: white; }
-
-.pie a:after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1; }
+  text-align: center;
+  background-color: rgba(243, 178, 0, 0.664); }

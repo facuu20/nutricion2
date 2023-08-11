@@ -1,4 +1,4 @@
-header {
+.header {
     padding: 3.75rem;
     font-size: 1rem;
     display: flex;
@@ -13,7 +13,7 @@ header {
     }
 
     nav {
-        width: 80%;
+        width: 100%;
         padding: 1.850rem;
 
         ul {
@@ -22,14 +22,27 @@ header {
             align-items: center;
             width: 100%;
             list-style: none;
-
-            a {
-                color: black;
-                text-decoration: none;
-                font-size: 1.2rem;
-                font-weight: 37.5rem;
-            }
         }
 
     }
+
+    a {
+        color: black;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 37.5rem;
+    }
+}
+
+
+@media (max-width: 578px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+
 }
